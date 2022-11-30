@@ -9,18 +9,18 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os, environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+my_env = environ.Env()
+environ.Env.read_env()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vu#$-(ig6cz%tw7(y=&g&nr4o()2b5xqhbid3s=myguethw)81'
+SECRET_KEY = my_env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,10 +75,15 @@ WSGI_APPLICATION = 'soundscraper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': my_env('DB_NAME'),
+        'USER': my_env('DB_USER'),
+        'PASSWORD': my_env('DB_PASSWORD'),
+        'HOST': my_env('DB_HOST'),
+        'PORT': my_env('DB_PORT')
     }
 }
+
 
 
 # Password validation
