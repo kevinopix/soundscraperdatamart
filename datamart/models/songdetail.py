@@ -15,6 +15,6 @@ class SoundcloudAlbumSongDetail(models.Model):
         return f"{self.album_song.song_URL }"
 
     class Meta:
-        verbose_name = "Album Song Detail"
-        verbose_name_plural = "Album Song Details"
+        verbose_name = "Soundcloud Album Song Detail"
+        verbose_name_plural = "Soundcloud Album Song Details"
 
