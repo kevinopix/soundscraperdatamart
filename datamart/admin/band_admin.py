@@ -1,5 +1,10 @@
 from django.contrib import admin
 from datamart.models import Band
-# Register your models here.
+from datamart.resources import BandResource
+from import_export.admin import ImportExportModelAdmin
 
-admin.site.register(Band)
+class BandAdmin(ImportExportModelAdmin):
+    resource_classes = [BandResource]
+
+
+admin.site.register(Band, BandAdmin)

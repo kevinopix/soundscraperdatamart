@@ -2,3 +2,4 @@ django
 django-environ
 psycopg2==2.9.5
 django-import-export==3.0.1
+pandas

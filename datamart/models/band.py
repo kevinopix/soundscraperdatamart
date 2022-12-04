@@ -9,4 +9,4 @@ class Band(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Soundcloud URL --- {self.soundcloud_band_url } --- by {self.band_name}"
+        return f"{self.band_name}"
