@@ -1,9 +1,6 @@
 import pandas as pd
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.management.base import BaseCommand
-# from django.conf import settings
-# from django.contrib.auth import get_user_model
-# User = get_user_model()
 from datamart.models import Band, BandProfile
 
 class Command(BaseCommand):

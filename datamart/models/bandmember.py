@@ -9,4 +9,4 @@ class BandMember(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.band_name.band_name } --- {self.first_name} --- {self.last_name}"
+        return f"{self.band_name.band_name } --- {self.first_name} {self.last_name}"
