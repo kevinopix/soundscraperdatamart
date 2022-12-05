@@ -11,12 +11,12 @@ class Command(BaseCommand):
         # to_import = to_import.drop(columns=['Unnamed: 0'])
         # print(to_import)
         categories = to_import['album_category'].unique().tolist()
-        print(categories)
+        # print(categories)
         df_cat = pd.DataFrame()
         df_cat['category_name'] = categories
         exist = pd.DataFrame(AlbumCategory.objects.values('pk', 'category_name'))
         # exist.columns = ['album_pk', 'category_name']
-        print(exist)
+        # print(exist)
         for index, row in df_cat.iterrows():
             val = row['category_name']
             try:

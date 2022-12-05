@@ -12,7 +12,7 @@ class Command(BaseCommand):
         exist = pd.DataFrame(Band.objects.values('pk','soundcloud_band_url'))
         joined = pd.merge(exist, to_import, on='soundcloud_band_url', how='left')
         joined.columns = ['band_pk','soundcloud_band_url','followers', 'following', 'tracks']
-        print(joined)
+        # print(joined)
         for index, row in joined.iterrows():
             band_pk_val = row['band_pk']
             try:

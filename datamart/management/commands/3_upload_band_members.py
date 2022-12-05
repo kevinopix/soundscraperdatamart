@@ -12,8 +12,8 @@ class Command(BaseCommand):
         exist = pd.DataFrame(Band.objects.values('pk','soundcloud_band_url'))
         joined = pd.merge(exist, to_import, on='soundcloud_band_url', how='left')
         joined.columns = ['band_pk','soundcloud_band_url','first_name', 'last_name']
-        print(joined)
-        print(len(joined))
+        # print(joined)
+        # print(len(joined))
         for index, row in joined.iterrows():
             band_pk_val = row['band_pk']
             first_name_val = row['first_name']
@@ -31,4 +31,4 @@ class Command(BaseCommand):
                 model.last_name = last_name_val
                 model.band_name = Band(pk=band_pk_val)
                 model.save()
-            print(band_pk_val, first_name_val, last_name_val, val_exist)
+            # print(band_pk_val, first_name_val, last_name_val, val_exist)

@@ -31,4 +31,4 @@ class Command(BaseCommand):
                 model.album_url = album_url_val
                 model.band_name = Band(pk=band_pk_val)
                 model.save()
-            print(band_pk_val, album_url_val, album_name_val, val_exist)
+            # print(band_pk_val, album_url_val, album_name_val, val_exist)
