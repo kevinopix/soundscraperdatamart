@@ -1,15 +1,9 @@
 from django.core.management.base import BaseCommand
 from subprocess import Popen
 from sys import stdout, stdin, stderr
-import time
-import os
-import signal
-import subprocess,logging
-from threading import Thread
-import shlex
+import time, os, signal, logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
 logger = logging.getLogger(__name__)
 
 
@@ -37,8 +31,16 @@ class Command(BaseCommand):
 
             try:
                 proc.wait()
+                print()
+                print()
                 print("Processing functionality....... ")
                 time.sleep(5)
                 print("Finished $ " + command +" Successful Run")
+                print()
+                print('---------------------')
+                print('---------------------')
+                print('---------------------')
+                print('---------------------')
+                print()
             except KeyboardInterrupt:
                 os.kill(proc.pid, signal.SIGKILL)
