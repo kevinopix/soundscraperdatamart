@@ -23,6 +23,7 @@ class Command(BaseCommand):
         'python manage.py 5_upload_band_albums',
         'python manage.py 6_upload_album_profiles',
         'python manage.py 7_upload_soundcloudalbumsong',
+        'python manage.py 8_upload_song_details',
     ]
 
     def handle(self, *args, **options):
